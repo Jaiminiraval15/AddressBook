@@ -26,5 +26,20 @@ namespace AddressBook.Controllers
 
             return View("LOC_CountryList",dt);
         }
+        public IActionResult Delete(int ID)
+        {
+            string str = this.Configuration.GetConnectionString("myConnectionString");
+            SqlConnection conn = new SqlConnection(str);
+            conn.Open();
+            SqlCommand cmd = conn.CreateCommand(); 
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "DELETELOC_Country";
+            cmd.Parameters.AddWithValue("@ID", ID);
+            cmd.ExecuteNonQuery();
+            conn.Close();
+            return RedirectToAction("Index");
+
+
+        }
     }
 }

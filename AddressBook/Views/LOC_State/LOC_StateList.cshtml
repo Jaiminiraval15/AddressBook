@@ -1,0 +1,25 @@
+﻿@using System.Data
+@model DataTable;
+
+<table class="table table-responsive table-sm">
+    <thead>
+        <tr>
+            <th>StateID</th>
+            <th>StateName</th>
+            <th>Created</th>
+            <th>Modified</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (DataRow d in Model.Rows)
+        {
+            <tr>
+                <td>@d["STATEID"]</td>
+                <td>@d["STATENAME"]</td>
+                <td>@Convert.ToDateTime(d["CREATED"]).ToString("dd-MM-yyyy")</td>
+                <td>@Convert.ToDateTime(d["MODIFIED"]).ToString("dd-MM-yyyy")</td>
+            </tr>
+        }
+    </tbody>
+
+</table>

@@ -1,0 +1,27 @@
+﻿@model LOC_CountryModel
+<div class="row"> 
+    <div class="col-md-12">
+        <form method="post" asp-controller="LOC_Country" asp-action="Save">
+            <div class="form-group">
+                <label>CountryName</label>
+                <input type="text" class="form-control" asp-for="COUNTRYNAME" placeholder="Enter name" />
+            </div>
+            <div class="form-group">
+                <label>CountryCode</label>
+                <input type="text" class="form-control" asp-for="COUNTRYCODE" placeholder="Enter code" />
+            </div>
+            <div class="form-group">
+                <label>Created</label>
+                <input type="date" class="form-control" asp-for="CREATED" placeholder="Enter create date" />
+            </div>
+          
+            <div class="form-group">
+                <label>Modified</label>
+                <input type="date" class="form-control" asp-for="MODIFIED" placeholder="Enter modified date" />
+            </div>
+            <hr />
+            <input type="submit" value="Save"/>
+
+        </form>
+    </div>
+</div>

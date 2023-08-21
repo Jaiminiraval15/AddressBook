@@ -2,7 +2,7 @@
     //ViewData["Title"] = "LOC_CountryList";
    // Layout = "~/Views/Shared/_Layout.cshtml";
 }
-@using System.Data
+@using System.Data;
 @model DataTable;
 <div class="container">
     <a class="btn btn-success" asp-controller="LOC_Country" asp-action="Add">Add Country</a>
@@ -26,7 +26,7 @@
                 <td>@Convert.ToDateTime(d["MODIFIED"]).ToString("dd-MM-yyyy")</td>
                 <td>
                         <form method="post" asp-controller="LOC_Country" asp-action="Delete">
-        <input type="hidden" name="ID" value="@Convert.ToInt32(d["COUNTRYID"])">
+        <input type="hidden" name="COUNTRYID" value="@Convert.ToInt32(d["COUNTRYID"])">
         <button type="submit" class="btn btn-danger btn-xs"
         onclick="return fun1();">Delete</button></form></td>
             </tr>
@@ -34,6 +34,7 @@
     </tbody>
 
 </table>
+</div>
 @section Scripts
 {
     <script>
